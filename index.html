@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Question</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body class="container">
+
+    <div class="jumbotron">
+        <div class="h1 text-center">
+            Question Modal Demo
+        </div>
+    </div>
+
+    <div class="form-group h4 text-center">
+        <label class="col-sm-12 control-label">Click on these buttons to see the modal in action.</label>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="form-group">
+        <div class="col-sm-6 text-center">
+            <button type="button" onclick="singleChoice()" class="btn btn-primary">Ask a Single Choice Question</button>
+        </div>
+        <div class="col-sm-6 text-center">
+            <button type="button" onclick="multiChoice()" class="btn btn-primary">Ask a Multiple Choice Question</button>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="modalQuestion.js"></script>
+    <script>
+        function singleChoice() {
+            modalQuestion.ask(
+                'Please select your options', [
+                    {value: "1", label: "First"},
+                    {value: "2", label: "Second"},
+                    {value: "3", label: "Third"},
+                    {value: "4", label: "Fourth"},
+                ],
+                false,
+                function (values) {
+                    alert("Your choice: " + values);
+                }
+            );
+        }
+
+        function multiChoice() {
+            modalQuestion.ask(
+                'Please select your options', [
+                    {value: "1", label: "First"},
+                    {value: "2", label: "Second"},
+                    {value: "3", label: "Third"},
+                    {value: "4", label: "Fourth"},
+                ],
+                true,
+                function (values) {
+                    alert("Your choices: " + values);
+                }
+            );
+        }
+    </script>
+</body>
+</html>
