@@ -4,7 +4,11 @@ This is a small utility to present a set of choices to the user as a bootstrap m
 The question may be single choice (radio) or a multi (checkbox) choice one.
 The selected values are then passed to a callback function as an array or a single value based on question type.
 
-Typical usage:
+Demo: https://anuptripathi4u.github.io/modalQuestion/
+
+
+## Typical usage:
+
 ```javascript
 modalQuestion.ask(
     'Please select your options', [
